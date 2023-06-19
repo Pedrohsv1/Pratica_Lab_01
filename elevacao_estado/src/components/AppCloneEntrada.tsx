@@ -1,11 +1,7 @@
-interface IAppCloneEntrada {
-    title: string
-}
-
-export const AppCloneEntrada = (props: IAppCloneEntrada) => {
+export const AppCloneEntrada = (props: any) => {
     return (
         <>
-            <label htmlFor="" >{props.title}</label>
+            <p>{props.title}</p>
         </>
     )
 }

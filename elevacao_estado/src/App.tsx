@@ -1,25 +1,22 @@
 import { useState } from 'react'
 import './App.css'
 import { AppNavBar } from './components/AppNavBar'
+import { AppEntrada } from './components/AppEntrada'
+import { AppCloneEntrada } from './components/AppCloneEntrada'
 
 
 function App() {
-  const [AppEntrada, setAppEntrada] = useState('Input')
-  const [AppCloneEntrada, setAppCloneEntrada] = useState('Entrada')
+  const [entrada, setEntrada] = useState('Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis repellat assumenda nesciunt iusto atque sed, pariatur voluptate delectus ea placeat harum magni blanditiis sint cupiditate iste! Temporibus quasi totam minima?')
 
-  function handleAppEntrada(e: any) {
-    setAppEntrada(e.target.value)
-  }
-
+    const mudarEntrada = (e: any) => {
+        setEntrada(e)
+    }
   return (
     <>
       <div>
         <AppNavBar title={'Titulo'}/>
-        <AppEntrada title={AppCloneEntrada} func={handleAppEntrada}/>
-        {AppEntrada.length > 0 &&
-          <p>{AppEntrada}</p>
-        }
-
+        <AppEntrada title={'Entrada'} func={mudarEntrada}/>
+        <AppCloneEntrada title={entrada} />
       </div>
     </>
   )
